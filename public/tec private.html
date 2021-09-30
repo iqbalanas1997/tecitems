@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>TEC Private</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" href="images/tec_logo-removebg-preview.png" type="image/gif" sizes="16x16">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="assets/js/app.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+
+</head>
+
+<body class="is-preload" onload="return getdata();">
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+	<script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyCzSv2ekIfzdISLfaUjytjnJfkYEWxAemQ",
+			authDomain: "tecitems.firebaseapp.com",
+			databaseURL: "https://tecitems.firebaseio.com",
+			projectId: "tecitems",
+			storageBucket: "tecitems.appspot.com",
+			messagingSenderId: "853414110941",
+			appId: "1:853414110941:web:1c6e1f12f71d8fa7acdd34",
+			measurementId: "G-T45FDZS1LR"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+
+		var gelmachinestockFinal = parseInt(2)
+		function gelStockadd() {
+			firebase.database().ref("gelstocks").set({
+				gelmachinestock: (parseInt(document.getElementById('gelstockTF').value)+gelmachinestockFinal)
+
+});
+
+			gelmachinestockFinal = (parseInt(document.getElementById('gelstockTF').value + gelmachinestockFinal))
+
+		}
+
+	</script>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="index.html">
+			<h3 style="color:rgb(184, 50, 50);">TEC<sup>&reg</sup></h3>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+				</li>
+
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Gallery
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="sanitizer dispenser gallery.html">Hand Sanitizer Dispenser</a>
+						<a class="dropdown-item disabled" href="#">Hand Sanitizer Gel</a>
+						<a class="dropdown-item disabled" href="#">Hand Sanitizer Liquid</a>
+						<a class="dropdown-item disabled" href="rakaat counter gallery.html">Digital Rakaat Counter
+							(Fiqa e Jafarya)</a>
+						<a class="dropdown-item disabled" href="#">Digital Rakaat Counter (Sunni)</a>
+						<!-- <div class="dropdown-divider"></div> -->
+						<a class="dropdown-item disabled" href="#">Tec Fan</a>
+					</div>
+				</li>
+
+
+		</div>
+	</nav>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+
+
+
+		<!-- Header -->
+		<header id="header">
+			<h1 style="color:rgb(184, 50, 50);">TEC<sup>&reg</sup></h1>
+			<p style="color: white;">Management</p>
+
+		</header>
+
+
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- <div class="container-fluid">
+				<div class="container" style="text-align: center;">
+					<br>
+					<br>
+					<a href="stock.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Stock</a>
+					<br>
+					<br>
+					<a href="stock.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"></a>
+					<br>
+					<br>
+					<a href="stock.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Stock</a>
+					<br>
+					<br>
+					<a href="stock.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Stock</a>					
+				</div>
+			</div> -->
+
+			<!-- Content -->
+			<section id="content" class="main">
+				<h2 style="text-align: center; color: brown;">STOCK</h2>
+				<h3>Touch-Free Hand Sanitizer Dispenser <span style="color: indianred;"> Gel </span> Stock
+				</h3>
+				<input type="text" id="gelstockTF" placeholder="Enter Quantity here"
+					onkeypress='return event.charCode  >= 48 && event.charCode <= 57'></input>
+
+				<button onclick="gelStockadds()">Add</button>
+				<button onclick="gelStockremove()">Remove</button>
+				<h5 >Gel Machine Stock : <span style="font-weight: bolder; font-size: 50px;" id="gelstcks"></span> pcs
+				</h5>
+				<p>Last update : <span id="lastupdategel" style="color: red;"></span> </p>
+				<br>
+				<br>
+				<hr>
+				<br>
+
+
+				<h3>Touch-Free Hand Sanitizer Dispenser <span style="color: indianred;"> Spray </span> Stock
+				</h3>
+				<input type="text" id="spraystockTF" placeholder="Enter Quantity here"
+					onkeypress='return event.charCode  >= 48 && event.charCode <= 57'></input>
+
+				<button onclick="sprayStockadd()">Add</button>
+				<button onclick="sprayStockremoves()">Remove</button>
+				<h5>Spray Machine Stock : <span style="font-weight: bolder; font-size: 50px;" id="spraystcks"></span> pcs
+				</h5>
+				<p>Last update : <span id="lastupdatespray" style="color: red;"></span> </p>
+
+
+				<br>
+				<br>
+				<hr>
+				<br>
+
+
+				<h3>Chargers for <span style="color: indianred;"> (Rakat Counter) </span> Stock
+				</h3>
+				<input type="text" id="RCchargerTF" placeholder="Enter Quantity here"
+					onkeypress='return event.charCode  >= 48 && event.charCode <= 57'></input>
+
+				<button onclick="RCchargerStockadd()">Add</button>
+				<button onclick="RCchargersremoves()">Remove</button>
+				<h5>Chargers Stock : <span style="font-weight: bolder; font-size: 50px;" id="RCchargerstcks"></span> pcs
+				</h5>
+				<p>Last update : <span id="lastupdatespray" style="color: red;"></span> </p>
+
+
+
+				<div>
+					<h3 style="color: indianred; text-align: center;"> Daily Activity</h3>
+					<textarea id="message" name="Text1" cols="40" rows="5"></textarea>
+					<div style="text-align: center;">
+						<button onclick="activity()">Submit</button>
+						<button>See All Activity</button>
+					</div>
+
+					<br>
+
+					<div id="scrollbar">
+						<h6 style="text-align: center;">Daily activity</h6>
+						<p id="dactivityrecord">
+							<span id="datetime" class="time float-right"></span>
+						</p>
+
+					</div>
+
+					<ol id="activityList">
+						<li>ABC</li>
+					</ol>
+
+					<p id="demo"></p>
+				</div>
+
+				<br>
+				<br>
+				<br>
+				<div>
+					<h3 style="color: indianred; text-align: center;"> Given Samples</h3>
+
+					<div class="container">
+						<div class="row">
+
+
+							<div class="col-sm-3 col-md-3 col-lg-3">
+							</div>
+
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<h6>Reference :</h6>
+								<input type="text" name="" id="refid">
+
+								<h6>Quantity :</h6>
+								<input type="text" name="" id="quantityid">
+
+								<h6>To :</h6>
+								<input type="text" name="" id="toid">
+
+								<br>
+
+								<div style="text-align: center;">
+									<button>Submit</button>
+									<button>See All Given Sample</button>
+								</div>
+							</div>
+
+							<div id="scrollbar">
+								<h6 style="text-align: center;">Given Samples</h6>
+								<p >
+									<span id="datetime" class="time float-right"></span>
+								</p>
+		
+							</div>
+
+							
+							<div class="col-sm-3 col-md-3 col-lg-3">
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+
+
+
+		</div>
+
+
+		<!-- Footer -->
+		<div class="container-fluid" style="background-color: 	#A9A9A9;">
+			<footer id="footer">
+				<section>
+					<h5 style=" font-weight: bold;">Contact us</h5>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name" />
+							</div>
+							<div class="field">
+								<label for="email">Email</label>
+								<input type="text" name="email" id="email" />
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="3"></textarea>
+							</div>
+						</div>
+						<br>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" /></li>
+						</ul>
+					</form>
+				</section>
+				<section>
+					<h5 style="color:rgb(184, 50, 50); font-weight: bold;">TEC<sup>&reg</sup></h5>
+					<dl class="alt">
+						<dt style="font-weight: bold;">Address</dt>
+						<dd style="color: white;">Opp : side gate of BVS School,
+							Crescent Court, Mosque Lane,
+							Abdullah Haroon Road, Karachi,
+							Pakistan
+						</dd>
+						<dt style="font-weight: bold;">Phone</dt>
+						<dd style="color: white;">+92 310 1015275</dd>
+						<dd style="color: white;">+92 321 2724587</dd>
+						<dt style="font-weight: bold;">Email</dt>
+						<dd style="color: white;"><a href="#">tec.info.care@gmail.com</a></dd>
+					</dl>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+					</ul>
+				</section>
+
+			</footer>
+		</div>
+		<!-- Copyright -->
+		<div class="mb-3" id="copyright" style="text-align: center;">
+			&copy; TEC |
+			Design By : <a href="#">iTech Team</a>
+		</div>
+
+
+
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+		integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+		crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

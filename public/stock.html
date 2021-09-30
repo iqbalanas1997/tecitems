@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>TEC Private</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" href="images/tec_logo-removebg-preview.png" type="image/gif" sizes="16x16">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="assets/js/app.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCzSv2ekIfzdISLfaUjytjnJfkYEWxAemQ",
+    authDomain: "tecitems.firebaseapp.com",
+    databaseURL: "https://tecitems.firebaseio.com",
+    projectId: "tecitems",
+    storageBucket: "tecitems.appspot.com",
+    messagingSenderId: "853414110941",
+    appId: "1:853414110941:web:3632f0c858b43a6cacdd34",
+    measurementId: "G-56GEPNQ6J7"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+</head>
+
+<body class="is-preload">
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="index.html"><h3 style="color:rgb(184, 50, 50);">TEC<sup>&reg</sup></h3></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+	  
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+			  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+			</li>
+			
+
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Gallery
+			  </a>
+			  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="sanitizer dispenser gallery.html">Hand Sanitizer Dispenser</a>
+				<a class="dropdown-item disabled" href="#">Hand Sanitizer Gel</a>
+				<a class="dropdown-item disabled" href="#">Hand Sanitizer Spray</a>
+				<a class="dropdown-item disabled" href="#">Digital Rakaat Counter (Fiqa e Jafarya)</a>
+				<a class="dropdown-item disabled" href="#">Digital Rakaat Counter (Sunni)</a>
+				<!-- <div class="dropdown-divider"></div> -->
+				<a class="dropdown-item disabled" href="#">Tec Fan</a>
+			  </div>
+			</li>
+			
+		
+		</div>
+	  </nav>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+
+		
+
+		<!-- Header -->
+		<header id="header">
+			<h1 style="color:rgb(184, 50, 50);">TEC<sup>&reg</sup></h1>
+			<p style="color: white;">Management</p>
+
+		</header>
+
+
+
+		<!-- Main -->
+		<div id="main">
+
+
+			<!-- Content -->
+			<section id="content" class="main">
+				<h3>Touch-Free Hand Sanitizer Dispenser <span style="color: indianred;"> Gel </span> Stock
+				</h3>
+				<input type="text" id="gelstock">
+
+				<button onclick="gelStockadd()">Add</button>
+				<button onclick="gelStock()">Remove</button>
+				<h5>Gel Machine Stock : <span style="font-weight: bolder; font-size: 50px;" id="gelstck">0</span> pcs </h5>
+				
+				<br>
+				<br>
+				<hr>
+				<br>
+				<br>
+
+
+				<h3>Touch-Free Hand Sanitizer Dispenser <span style="color: indianred;"> Spray </span> Stock
+				</h3>
+				<input type="text" id="spraystock">
+
+				<button onclick="sprayStock()">Update</button>
+				<h5>Spray Machine Stock : <span style="font-weight: bolder; font-size: 50px;" id="spraystck">0</span> pcs </h5>
+				
+
+
+
+
+
+
+</div>
+
+
+		<!-- Footer -->
+		<div class="container-fluid" style="background-color: 	#A9A9A9;">
+			<footer id="footer">
+				<section>
+					<h5 style=" font-weight: bold;">Contact us</h5>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name" />
+							</div>
+							<div class="field">
+								<label for="email">Email</label>
+								<input type="text" name="email" id="email" />
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="3"></textarea>
+							</div>
+						</div>
+						<br>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" /></li>
+						</ul>
+					</form>
+				</section>
+				<section>
+					<h5 style="color:rgb(184, 50, 50); font-weight: bold;">TEC<sup>&reg</sup></h5>
+					<dl class="alt">
+						<dt style="font-weight: bold;">Address</dt>
+						<dd style="color: white;">Opp : side gate of BVS School,
+							Crescent Court, Mosque Lane,
+							Abdullah Haroon Road, Karachi,
+							Pakistan
+							</dd>
+						<dt style="font-weight: bold;">Phone</dt>
+						<dd style="color: white;">+92 310 1015275</dd>
+						<dd style="color: white;">+92 321 2724587</dd>
+						<dt style="font-weight: bold;">Email</dt>
+						<dd style="color: white;"><a href="#">tec.info.care@gmail.com</a></dd>
+					</dl>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+					</ul>
+				</section>
+
+			</footer>
+		</div>
+		<!-- Copyright -->
+		<div class="mb-3" id="copyright" style="text-align: center;">
+				&copy; TEC | 
+				Design By : <a href="#">iTech Team</a>
+		</div>
+
+
+
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+		  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
